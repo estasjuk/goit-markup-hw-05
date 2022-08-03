@@ -179,8 +179,8 @@ body {
 .footer-mail:focus,
 .footer-tel:hover,
 .footer-tel:focus,
-.footer-address:hover,
-.footer-address:focus {
+.footer-add:hover,
+.footer-add:focus {
   color: var(--active-hover-focus-current);
   transition: color, 250ms, cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -325,21 +325,10 @@ body {
   position: relative;
 }
 
-.project-list-foto::after {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  content: '';
-  width: 100%;
-  height: 24%;
-  background-color: rgba(47, 48, 58, 0.8);
-}
-
 .list-project-text {
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
-  text-align: center;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #ffffff;
@@ -347,9 +336,13 @@ body {
 
 .list-project-description {
   position: absolute;
-  bottom: 50%;
-  left: 50%;
-  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  width: 100%;
+  height: 24%;
+  background-color: rgba(47, 48, 58, 0.8);
 }
 
 .team {
@@ -410,7 +403,7 @@ body {
   height: 44px;
   border-radius: 50%;
   color: #afb1b8;
-  tra
+  transition-property: background-color, color;
 }
 
 .member-social-icon {
@@ -468,6 +461,7 @@ body {
   color: #afb1b8;
   border: 1px solid #afb1b8;
   border-radius: 4px;
+  transition-property: color, border-color;
 }
 
 .client-icon {
@@ -478,7 +472,8 @@ body {
 .client-link:focus {
   color: var(--active-hover-focus-current);
   border-color: var(--active-hover-focus-current);
-  
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer {
@@ -575,6 +570,7 @@ body {
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.1);
   color: #ffffff;
+  transition-property: background-color, color;
 }
 
 .footer-social-icon {
@@ -585,6 +581,8 @@ body {
 .footer-social-link:focus {
   background-color: var(--active-hover-focus-current);
   color: #ffffff;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio {
@@ -622,11 +620,13 @@ body {
   padding-right: 24px;
 
   transform: translateY(100%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  transition-property: transform;
 }
 .project-item:hover .project-text-container,
 .project-link:focus .project-text-container {
   transform: translateY(0);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-text {
@@ -639,12 +639,14 @@ body {
 .project-link {
   display: block;
   text-decoration: none;
+  transition-property: box-shadow;
 }
 
 .project-link:hover,
 .project-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-item {
@@ -694,6 +696,7 @@ body {
   text-align: center;
   letter-spacing: 0.03em;
   cursor: pointer;
+  transition-property: color, background-color;
 }
 
 .current-button {
@@ -705,4 +708,6 @@ body {
 .portfolio-btn:focus {
   color: #ffffff;
   background-color: #2196f3;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
