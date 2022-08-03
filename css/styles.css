@@ -61,7 +61,7 @@ img {
 body {
   color: var(--text-color);
   background-color: var(--main-background-color);
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .head-container {
@@ -94,7 +94,7 @@ body {
   padding-bottom: 24px;
   margin-right: 93px;
   color: var(--main-logo);
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   text-decoration: none;
   font-weight: 700;
   font-size: 26px;
@@ -137,6 +137,7 @@ body {
   padding-bottom: 32px;
   color: var(--title-color);
   text-decoration: none;
+  transition-property: color;
 }
 
 .nav-tel,
@@ -151,6 +152,7 @@ body {
   letter-spacing: 0.02em;
   display: flex;
   align-items: center;
+  transition-property: color;
 }
 
 .mail-icon {
@@ -180,10 +182,28 @@ body {
 .footer-address:hover,
 .footer-address:focus {
   color: var(--active-hover-focus-current);
+  transition: color, 250ms, cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 [aria-current] {
   color: var(--active-hover-focus-current);
+}
+
+.nav-item {
+  position: relative;
+}
+
+[aria-current]::after {
+  content: '';
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 4px;
+  background-color: var(--active-hover-focus-current);
+  border-radius: 2px;
 }
 
 .hero {
@@ -194,7 +214,8 @@ body {
   text-align: center;
   padding-bottom: 200px;
   padding-top: 200px;
-  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero-bg.jpg);
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url(../images/hero-bg.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -230,10 +251,12 @@ body {
   line-height: 1.88;
   letter-spacing: 0.06em;
   cursor: pointer;
+  transition-property: background-color;
 }
 
 .btn:hover {
   background-color: var(--hover-btn);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .features {
@@ -290,8 +313,43 @@ body {
   gap: 30px;
 }
 
+.project-list-card {
+  position: relative;
+}
+
 .list-project {
   flex-basis: calc((100% - 60px) / 3);
+}
+
+.project-list-foto {
+  position: relative;
+}
+
+.project-list-foto::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: '';
+  width: 100%;
+  height: 24%;
+  background-color: rgba(47, 48, 58, 0.8);
+}
+
+.list-project-text {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.list-project-description {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  z-index: 3;
 }
 
 .team {
@@ -321,7 +379,8 @@ body {
 .member-item {
   flex-basis: calc((100% - 60px) / 3);
   background-color: var(--main-background-color);
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
 }
 
@@ -351,6 +410,7 @@ body {
   height: 44px;
   border-radius: 50%;
   color: #afb1b8;
+  tra
 }
 
 .member-social-icon {
@@ -361,6 +421,8 @@ body {
 .member-social-link:focus {
   background-color: var(--active-hover-focus-current);
   color: #ffffff;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*another method for icon-hover*/
@@ -416,6 +478,7 @@ body {
 .client-link:focus {
   color: var(--active-hover-focus-current);
   border-color: var(--active-hover-focus-current);
+  
 }
 
 .footer {
@@ -426,7 +489,7 @@ body {
   display: block;
   margin-bottom: 20px;
   color: var(--main-logo);
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   text-decoration: none;
   font-weight: 700;
   font-size: 26px;
@@ -445,10 +508,12 @@ body {
   letter-spacing: 0.03em;
   color: var(--contacts-footer);
   text-decoration: none;
+  transition-property: color;
 }
 
 .footer-address {
   margin-top: 10px;
+  transition-property: color;
 }
 
 .footer-item {
@@ -481,7 +546,7 @@ body {
 
 .logo-footer {
   color: var(--main-background-color);
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   text-decoration: none;
 }
 
@@ -535,6 +600,42 @@ body {
   gap: 30px;
 }
 
+.project-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-text-container {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(33, 150, 243, 0.9);
+
+  padding-top: 63px;
+  padding-bottom: 63px;
+  padding-left: 24px;
+  padding-right: 24px;
+
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.project-item:hover .project-text-container,
+.project-link:focus .project-text-container {
+  transform: translateY(0);
+}
+
+.project-text {
+  size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+}
+
 .project-link {
   display: block;
   text-decoration: none;
@@ -542,10 +643,12 @@ body {
 
 .project-link:hover,
 .project-link:focus {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .project-item {
+  position: relative;
   flex-basis: calc((100% - 60px) / 3);
 }
 
