@@ -311,11 +311,12 @@ body {
   gap: 30px;
 }
 
-.project-list-card {
+/*.project-list-card {
   position: relative;
-}
+}*/
 
 .list-project {
+  position: relative;
   flex-basis: calc((100% - 60px) / 3);
 }
 
