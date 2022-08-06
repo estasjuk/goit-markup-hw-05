@@ -336,10 +336,11 @@ body {
 .list-project-description {
   position: absolute;
   bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 24%;
-  padding-top: 27px;
-  padding-bottom: 27px;
   background-color: rgba(47, 48, 58, 0.8);
 }
 
