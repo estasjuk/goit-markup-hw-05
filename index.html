@@ -450,6 +450,18 @@
             </li>
           </ul>
         </div>
+        <div class="mailing-f">
+          <strong class="mailing">подписывайтесь на рассылку</strong>
+          <form class="mailing-form" name="mailing-form">
+            <input class="mailing-input" type="email" name="mailing-email" placeholder="E-mail" />
+            <button class="mailing-btn" type="submit">
+              Подписаться
+              <svg class="icon-send" width="24px" height="24px">
+                <use href="./images/icons.svg#icon-send"></use>
+              </svg>
+            </button>
+          </form>
+        </div>
       </div>
     </footer>
     <div class="backdrop is-hidden" data-modal>
@@ -459,6 +471,32 @@
             <use href="./images/icons.svg#icon-close-button"></use>
           </svg>
         </button>
+        <p class="order-form-title">Оставьте свои данные, мы вам перезвоним</p>
+        <form class="order-form">
+          <label for="user-name" class="order-form-label">Имя</label>
+          <input type="text" name="user-name" id="user-name" class="order-form-input" />
+
+          <label for="user-tel" class="order-form-label">Телефон</label>
+          <input type="tel" name="user-tel" id="user-tel" class="order-form-input" />
+
+          <label for="user-email" class="order-form-label">Почта</label>
+          <input type="email" name="user-email" id="user_email" class="order-form-input" />
+
+          <label for="user-comment" class="order-form-label">Комментарий</label>
+          <textarea
+            name="user-comment"
+            placeholder="Введите текст"
+            id="user-comment"
+            class="order-form-comment"
+          ></textarea>
+          <div class="condition-checkbox">
+            <input type="checkbox" name="conditions" id="condition-checkbox" />
+            <label for="condition-checkbox" class="condition-checkbox-label"
+              >Соглашаюсь с рассылкой и принимаю <a href="">Условия договора</a></label
+            >
+          </div>
+          <button type="submit" class="order-submit-btn">Отправить</button>
+        </form>
       </div>
     </div>
     <script src="./js/modal.js"></script>
